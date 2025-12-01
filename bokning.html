@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Bokning – Golden Heights i Svenshögen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bokning av boende på Golden Heights i Svenshögen – företagsboende, vandrarhem, lägenheter och framtida camping.">
+    <style>
+        :root {
+            --bg: #050816;
+            --bg-soft: #020617;
+            --bg-card: rgba(15, 23, 42, 0.98);
+            --accent: #fbbf24;
+            --accent-strong: #f59e0b;
+            --accent-soft: rgba(251, 191, 36, 0.12);
+            --text: #f9fafb;
+            --muted: #9ca3af;
+            --border-soft: rgba(148, 163, 184, 0.36);
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.9);
+            --max-width: 980px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top left, #1f2937 0, transparent 50%),
+                radial-gradient(circle at bottom right, #020617 0, transparent 55%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        header {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.90));
+            border-bottom: 1px solid rgba(55, 65, 81, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            backdrop-filter: blur(18px);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0.7rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .logo-sub {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--muted);
+            margin-top: 0.15rem;
+        }
+
+        .back-link {
+            font-size: 0.8rem;
+            color: var(--muted);
+            padding: 0.4rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(55, 65, 81, 0.8);
+            background: rgba(15, 23, 42, 0.96);
+        }
+
+        .back-link:hover {
+            border-color: rgba(148, 163, 184, 0.9);
+            color: var(--text);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1rem 3.5rem;
+        }
+
+        .page-header { margin-bottom: 1.7rem; }
+
+        .eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .page-header p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            max-width: 36rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-soft);
+            padding: 1.1rem;
+            box-shadow: var(--shadow-soft);
+            font-size: 0.95rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+        h3 { font-size: 1rem; margin: 0.8rem 0 0.35rem; }
+        p { font-size: 0.9rem; }
+
+        ul { padding-left: 1.1rem; }
+        ul li { margin-bottom: 0.28rem; font-size: 0.9rem; }
+
+        .muted { font-size: 0.85rem; color: var(--muted); }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem 1.3rem;
+            border-radius: 999px;
+            border: none;
+            background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+            color: #111827;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.9rem;
+            box-shadow: 0 12px 30px rgba(251, 191, 36, 0.45);
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-soft);
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 0.83rem;
+            color: var(--muted);
+            cursor: pointer;
+            margin-top: 0.4rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(148, 163, 184, 0.9);
+            color: var(--text);
+            background: rgba(15, 23, 42, 1);
+        }
+
+        .button-column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-top: 0.4rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 1.5rem;
+        }
+
+        .contact-box {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-soft);
+            padding: 1.1rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-box h2,
+        .contact-box h3 { margin-bottom: 0.6rem; }
+
+        .contact-form label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.55rem;
+            margin-bottom: 0.7rem;
+            border-radius: 10px;
+            border: 1px solid rgba(55, 65, 81, 0.8);
+            background: #020617;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #6b7280;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .small-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
+        }
+
+        footer {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.2rem 1rem 2.3rem;
+            border-top: 1px solid rgba(55, 65, 81, 0.7);
+            font-size: 0.8rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 840px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-inner, main { padding-inline: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-inner">
+        <div>
+            <div class="logo">
+                GOLDEN <span>HEIGHTS</span>
+            </div>
+            <div class="logo-sub">Bokning & förfrågningar</div>
+        </div>
+        <a href="index.html" class="back-link">← Tillbaka till startsidan</a>
+    </div>
+</header>
+
+<main>
+    <div class="page-header">
+        <div class="eyebrow">Så bokar du</div>
+        <h1>Bokning på Golden Heights</h1>
+        <p>
+            Här samlar vi alla vägar in: företagsboende, vandrarhem, lägenheter och kommande camping.
+            Välj det som passar dig – eller fyll i formuläret längst ned om du vill att vi föreslår ett upplägg.
+        </p>
+    </div>
+
+    <!-- Tre huvudspår -->
+    <section>
+        <div class="grid">
+            <article class="card">
+                <h2>Företag & projekt</h2>
+                <p>
+                    För dig som behöver boende för gästarbetare, montörer eller projektpersonal. Vi skräddarsyr
+                    ett upplägg och lämnar offert.
+                </p>
+                <ul>
+                    <li>Gästhem, vandrarhem och lägenheter kan kombineras</li>
+                    <li>Fast pris per person och dygn / månad</li>
+                    <li>Möjlighet till fakturering</li>
+                </ul>
+                <p class="muted">
+                    Bäst väg: kontakta oss direkt med antal personer, ungefärliga datum och var ni ska jobba.
+                </p>
+                <a href="#kontakt" class="btn-primary">Skicka företagsförfrågan ▸</a>
+            </article>
+
+            <article class="card">
+                <h2>Privat, vandrarhem & kortare vistelser</h2>
+                <p>
+                    Reser du med familjen, partner, kompisar eller ensam? Vandrarhemmet är prisvärt och naturnära.
+                </p>
+                <ul>
+                    <li>Boka rum per natt</li>
+                    <li>Nära tåg, E6, natur och bad</li>
+                    <li>Flera rumstyper (beroende på säsong)</li>
+                </ul>
+                <p class="muted">
+                    Du kan boka via våra bokningspartners eller kontakta oss direkt vid särskilda önskemål.
+                </p>
+                <div class="button-column">
+                    <!-- BYT ut # mot riktiga länkar till Booking.com / Airbnb -->
+                    <a href="#" class="btn-secondary">Boka vandrarhem via Booking.com ▸</a>
+                    <a href="#" class="btn-secondary">Boka vandrarhem via Airbnb ▸</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Lägenheter & längre boende</h2>
+                <p>
+                    För dig som vill bo lite längre i Svenshögen. Vi har lägenheter i olika storlekar på och kring
+                    Golden Heights.
+                </p>
+                <ul>
+                    <li>1–5 rum och kök</li>
+                    <li>Passar både privatpersoner och företag</li>
+                    <li>Nära natur, tåg och större orter</li>
+                </ul>
+                <p class="muted">
+                    Skicka en intresseanmälan så hör vi av oss när något som passar blir ledigt.
+                </p>
+                <a href="#kontakt" class="btn-primary">Skicka intresseanmälan ▸</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Kontakt & formulär -->
+    <section id="kontakt">
+        <div class="contact-grid">
+            <div class="contact-box contact-form">
+                <h2>Gemensamt formulär för bokning / offert</h2>
+                <p class="muted" style="margin-bottom: 0.6rem;">
+                    Fyll i så mycket du vet. Vi återkommer med prisförslag eller frågor om vi behöver veta mer.
+                    Formuläret kan användas både av företag, privatpersoner och föreningar.
+                </p>
+                <!-- FORMULÄR – webbutvecklare kopplar till mail / Beds24 -->
+                <form>
+                    <label for="typ">Jag är / vi är</label>
+                    <input id="typ" name="typ" type="text" placeholder="Företag, privatperson, förening …">
+
+                    <label for="namn">Namn / företag</label>
+                    <input id="namn" name="namn" type="text" placeholder="Ditt namn eller företagsnamn">
+
+                    <label for="epost">E-post</label>
+                    <input id="epost" name="epost" type="email" placeholder="din.epost@adress.se">
+
+                    <label for="telefon">Telefon</label>
+                    <input id="telefon" name="telefon" type="tel" placeholder="Ditt telefonnummer">
+
+                    <label for="boendetyp">Önskad boendetyp</label>
+                    <input id="boendetyp" name="boendetyp" type="text" placeholder="Gästhem, vandrarhem, lägenhet, osäker …">
+
+                    <label for="personer">Antal personer</label>
+                    <input id="personer" name="personer" type="text" placeholder="Ca antal vuxna/barn eller personal">
+
+                    <label for="datum">Datum / period</label>
+                    <input id="datum" name="datum" type="text" placeholder="Exempel: 10–15 juni, eller maj–november">
+
+                    <label for="meddelande">Övrig info / önskemål</label>
+                    <textarea id="meddelande" name="meddelande" placeholder="Exempel: skiftarbete, behov av parkering för större fordon, tidig incheckning, längre avtal …"></textarea>
+
+                    <button type="submit" class="btn-primary">Skicka förfrågan ▸</button>
+                </form>
+            </div>
+            <div class="contact-box">
+                <h3>Direktkontakt & kommande onlinebokning</h3>
+                <p class="muted">
+                    Golden Heights använder en channel manager (Beds24) för att hålla ihop bokningar från t.ex.
+                    Booking.com och Airbnb. Webbutvecklaren kan här:
+                </p>
+                <ul class="muted">
+                    <li>bygga in en direkt bokningswidget från Beds24, eller</li>
+                    <li>visa knappar med tillgänglighet från våra bokningspartners.</li>
+                </ul>
+
+                <h3 style="margin-top: 1rem;">Kontaktuppgifter</h3>
+                <p><strong>Golden Heights</strong><br>
+                    Adressrad 1<br>
+                    444 00 Svenshögen</p>
+                <p><strong>E-post:</strong><br>
+                    info@goldenheights.se</p>
+                <p><strong>Telefon:</strong><br>
+                    070-000 00 00</p>
+                <p class="muted" style="margin-top: 0.7rem;">
+                    För brådskande ärenden rekommenderar vi att du ringer. För längre projekt, offertförfrågningar och
+                    mer komplexa upplägg är formuläret ovan oftast smidigast.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <span>© Golden Heights – Bokning & boende i Svenshögen</span>
+    <span>Gästhem · Vandrarhem · Lägenheter · Framtida camping</span>
+</footer>
+</body>
+</html>
