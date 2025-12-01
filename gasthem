@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Gästhemmet – Golden Heights Svenshögen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gästhemmet på Golden Heights i Svenshögen – boende för företag, gästarbetare och projektpersonal.">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .logo span {
+            color: #c2943e;
+        }
+
+        .back-link {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem 3rem;
+        }
+
+        .page-header {
+            margin-bottom: 1.8rem;
+        }
+
+        .page-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .page-header p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            padding: 1rem;
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            margin: 0.8rem 0 0.3rem;
+        }
+
+        ul {
+            padding-left: 1.1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.25rem;
+        }
+
+        .info-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-list li {
+            margin-bottom: 0.35rem;
+            color: #555;
+        }
+
+        .info-list li::before {
+            content: "•";
+            margin-right: 0.4rem;
+            color: #c2943e;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem 1.2rem;
+            border-radius: 999px;
+            border: none;
+            background: #c2943e;
+            color: #fff;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin-top: 0.7rem;
+        }
+
+        .btn-primary:hover {
+            background: #a37826;
+        }
+
+        .badge {
+            display: inline-block;
+            border-radius: 999px;
+            border: 1px solid #eee;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.8rem;
+            color: #666;
+            margin-right: 0.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .photo-placeholder {
+            background: #ddd;
+            border-radius: 10px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.6rem;
+        }
+
+        .small-text {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 1rem 2rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        @media (max-width: 800px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-inner">
+        <div class="logo">GOLDEN <span>HEIGHTS</span></div>
+        <a href="index.html#boenden" class="back-link">← Tillbaka till alla boenden</a>
+    </div>
+</header>
+
+<main>
+    <div class="page-header">
+        <h1>Gästhemmet på Golden Heights</h1>
+        <p>
+            Boende för företag, gästarbetare och projektpersonal i Svenshögen – med flexibla upplägg och
+            flera boendealternativ på samma anläggning.
+        </p>
+    </div>
+
+    <div class="layout">
+        <!-- Vänsterkolumn: huvudinfo -->
+        <div class="card">
+            <div class="photo-placeholder">
+                Här kan en bild på gästhemmet ligga
+            </div>
+
+            <h2>Boende för företag & projekt</h2>
+            <p>
+                Gästhemmet är anpassat för företag och grupper med gästarbetare eller projektanställda. Här bor
+                ni praktiskt, enkelt och prisvärt – med närhet till Stenungsund, Orust och Göteborgsområdet.
+            </p>
+
+            <h3>Vad som ingår</h3>
+            <ul>
+                <li>Möblerade rum i olika storlekar</li>
+                <li>Gemensamt kök och vardagsrum</li>
+                <li>WiFi</li>
+                <li>Tvättmöjligheter</li>
+                <li>Parkering i anslutning till boendet</li>
+            </ul>
+
+            <h3>Fördelar för företag</h3>
+            <ul>
+                <li>Paketpris per person och dygn eller månad</li>
+                <li>Möjlighet till fakturering</li>
+                <li>Flera boendeformer på samma anläggning</li>
+                <li>Flexibla lösningar vid skiftarbete</li>
+                <li>Kontaktperson på plats</li>
+            </ul>
+
+            <p class="small-text">
+                Berätta hur många personer ni är, under vilken period och var ni arbetar, så tar vi fram ett
+                förslag som passar just ert projekt.
+            </p>
+
+            <a href="index.html#kontakt" class="btn-primary">Kontakta oss för offert ▸</a>
+        </div>
+
+        <!-- Högerkolumn: snabbfakta -->
+        <div class="card">
+            <h2>Snabbfakta</h2>
+            <ul class="info-list">
+                <li>Läge: Svenshögen, nära E6 och tågstation</li>
+                <li>Passar: Företag, entreprenörer, större projekt</li>
+                <li>Boendeform: Delade eller egna rum, gemensamma ytor</li>
+                <li>Period: Kortare och längre uppdrag</li>
+            </ul>
+
+            <h3>Typiska gäster</h3>
+            <ul class="info-list">
+                <li>Industripersonal på uppdrag</li>
+                <li>Bygg- och anläggningsarbetare</li>
+                <li>Tekniker och montörer</li>
+            </ul>
+
+            <h3>Bokning</h3>
+            <p>
+                För bokning och offert, kontakta oss via formuläret på <strong>kontaktsidan</strong> eller
+                skicka e-post till <strong>info@goldenheights.se</strong>.
+            </p>
+            <p class="small-text">
+                Här kan webbutvecklaren även lägga in direktlänkar till Booking.com / Beds24 för vissa rum om
+                ni vill ha onlinebokning.
+            </p>
+
+            <h3>Nyckelord</h3>
+            <p>
+                <span class="badge">Företagsboende</span>
+                <span class="badge">Gästarbetare</span>
+                <span class="badge">Projektpersonal</span>
+                <span class="badge">Svenshögen</span>
+                <span class="badge">Stenungsund</span>
+            </p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    © Golden Heights – Gästhem • Vandrarhem • Lägenheter i Svenshögen
+</footer>
+</body>
+</html>
