@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Vandrarhemmet – Golden Heights i Svenshögen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Vandrarhemmet på Golden Heights i Svenshögen – enkelt, prisvärt och naturnära boende för resenärer, familjer och grupper.">
+    <style>
+        :root {
+            --bg: #050816;
+            --bg-soft: #020617;
+            --bg-card: rgba(15, 23, 42, 0.98);
+            --accent: #fbbf24;
+            --accent-strong: #f59e0b;
+            --accent-soft: rgba(251, 191, 36, 0.12);
+            --text: #f9fafb;
+            --muted: #9ca3af;
+            --border-soft: rgba(148, 163, 184, 0.36);
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.9);
+            --max-width: 980px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at top left, #1f2937 0, transparent 50%),
+                radial-gradient(circle at bottom right, #020617 0, transparent 55%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        header {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.90));
+            border-bottom: 1px solid rgba(55, 65, 81, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            backdrop-filter: blur(18px);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0.7rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo span { color: var(--accent); }
+
+        .logo-sub {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--muted);
+            margin-top: 0.15rem;
+        }
+
+        .back-link {
+            font-size: 0.8rem;
+            color: var(--muted);
+            padding: 0.4rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(55, 65, 81, 0.8);
+            background: rgba(15, 23, 42, 0.96);
+        }
+
+        .back-link:hover {
+            border-color: rgba(148, 163, 184, 0.9);
+            color: var(--text);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1rem 3.5rem;
+        }
+
+        .page-header { margin-bottom: 1.7rem; }
+
+        .eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .page-header p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            max-width: 36rem;
+        }
+
+        .tag-row {
+            margin-top: 0.7rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .tag {
+            font-size: 0.78rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-soft);
+            background: rgba(15, 23, 42, 0.92);
+            color: var(--muted);
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+            gap: 1.6rem;
+            align-items: flex-start;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-soft);
+            padding: 1.1rem;
+            box-shadow: var(--shadow-soft);
+            font-size: 0.95rem;
+        }
+
+        h2 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+        h3 { font-size: 1rem; margin: 0.9rem 0 0.35rem; }
+        p { font-size: 0.9rem; }
+
+        ul { padding-left: 1.1rem; }
+        ul li { margin-bottom: 0.28rem; font-size: 0.9rem; }
+
+        .info-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-list li {
+            margin-bottom: 0.35rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            display: flex;
+            gap: 0.45rem;
+        }
+
+        .dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 999px;
+            background: var(--accent);
+            margin-top: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem 1.3rem;
+            border-radius: 999px;
+            border: none;
+            background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+            color: #111827;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 0.9rem;
+            box-shadow: 0 12px 30px rgba(251, 191, 36, 0.45);
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-soft);
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 0.83rem;
+            color: var(--muted);
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(148, 163, 184, 0.9);
+            color: var(--text);
+            background: rgba(15, 23, 42, 1);
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-soft);
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 0.4rem;
+            gap: 0.4rem;
+        }
+
+        .photo-placeholder {
+            background: linear-gradient(135deg, #1f2937, #020617);
+            border-radius: var(--radius-md);
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: var(--muted);
+            border: 1px solid var(--border-soft);
+            margin-bottom: 0.7rem;
+        }
+
+        .muted { font-size: 0.85rem; color: var(--muted); }
+
+        .highlight-box {
+            background: var(--accent-soft);
+            border-radius: var(--radius-md);
+            padding: 0.7rem 0.8rem;
+            font-size: 0.86rem;
+            color: #fef3c7;
+            border: 1px solid rgba(250, 204, 21, 0.55);
+            margin-top: 0.7rem;
+        }
+
+        .small-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
+        }
+
+        footer {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.2rem 1rem 2.3rem;
+            border-top: 1px solid rgba(55, 65, 81, 0.7);
+            font-size: 0.8rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 840px) {
+            .layout { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-inner, main { padding-inline: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-inner">
+        <div>
+            <div class="logo">
+                GOLDEN <span>HEIGHTS</span>
+            </div>
+            <div class="logo-sub">Vandrarhem · Boende nära naturen</div>
+        </div>
+        <a href="index.html#boenden" class="back-link">← Tillbaka till alla boenden</a>
+    </div>
+</header>
+
+<main>
+    <div class="page-header">
+        <div class="eyebrow">Naturnära & prisvärt</div>
+        <h1>Vandrarhemmet på Golden Heights</h1>
+        <p>
+            Enkelt, tryggt och naturnära boende för dig som är på väg – med tåg, bil, cykel eller ryggsäck.
+            Perfekt för familjer, resenärer, släktingar på besök och mindre grupper.
+        </p>
+        <div class="tag-row">
+            <span class="tag">Nära vandring & bad</span>
+            <span class="tag">Kök & gemensamma ytor</span>
+            <span class="tag">Bra för tåg- och bilresenärer</span>
+        </div>
+    </div>
+
+    <div class="layout">
+        <!-- Vänster kolumn -->
+        <div class="card">
+            <div class="photo-placeholder">
+                Här kan en bild på vandrarhemmet / ett rum / gemensam yta ligga
+            </div>
+
+            <h2>Ett vandrarhem med lugn runt omkring</h2>
+            <p>
+                Vandrarhemmet på Golden Heights ligger i Svenshögen – en liten ort med stort lugn. Här sover du gott
+                efter en dag på vägarna, på jobbet eller i naturen. Inget krångel, bara enkelt boende med det du
+                behöver.
+            </p>
+
+            <h3>Rum & boende</h3>
+            <ul>
+                <li>Enkelrum, dubbelrum och familjevänliga rum (beroende på säsong)</li>
+                <li>Sängkläder kan ingå eller hyras – anpassas efter era önskemål</li>
+                <li>Gemensamt kök för egen matlagning</li>
+                <li>Vardagsrum / sällskapsyta</li>
+            </ul>
+
+            <h3>För vilka passar vandrarhemmet?</h3>
+            <ul>
+                <li>Familjer som vill bo prisvärt nära naturen</li>
+                <li>Resenärer som passerar E6 eller reser med tåg</li>
+                <li>Cyklister och vandrare på tur</li>
+                <li>Små grupper / kompisgäng</li>
+            </ul>
+
+            <p class="muted" style="margin-top: 0.5rem;">
+                Reser du med större grupp, kan vi kombinera vandrarhemmet med andra boenden på Golden Heights.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Reser du med barn?</strong><br>
+                Skriv hur många ni är och barnens ålder när du bokar, så hjälper vi er att hitta ett rum eller en
+                kombination som blir smidig.
+            </div>
+        </div>
+
+        <!-- Höger kolumn -->
+        <div class="card">
+            <div class="small-title">Läge & upplevelser</div>
+            <ul class="info-list">
+                <li>
+                    <span class="dot"></span>
+                    <span><strong>Natur:</strong> Närhet till skog, sjöar och fina promenadstråk.</span>
+                </li>
+                <li>
+                    <span class="dot"></span>
+                    <span><strong>Kommunikationer:</strong> Gångavstånd till tågstationen i Svenshögen, nära E6.</span>
+                </li>
+                <li>
+                    <span class="dot"></span>
+                    <span><strong>Utflykter:</strong> Bra läge för att upptäcka Stenungsund, Orust och västkusten.</span>
+                </li>
+            </ul>
+
+            <h3>Så bokar du vandrarhemmet</h3>
+            <p class="muted">
+                Du kan boka via våra bokningspartners eller höra av dig direkt till oss, beroende på vad som känns
+                enklast för dig.
+            </p>
+
+            <div class="button-row">
+                <!-- BYT ut # mot riktiga länkar till Booking.com / Airbnb när ni har dem -->
+                <a href="#" class="btn-secondary">Boka via Booking.com ▸</a>
+                <a href="#" class="btn-secondary">Boka via Airbnb ▸</a>
+            </div>
+
+            <p class="muted" style="margin-top: 0.6rem;">
+                För längre vistelser, större sällskap eller särskilda önskemål rekommenderar vi att du kontaktar oss
+                direkt – då kan vi ibland hitta en bättre lösning än standardpriserna.
+            </p>
+
+            <a href="bokning.html" class="btn-primary">Gå till sidan för bokningar ▸</a>
+
+            <h3 style="margin-top: 1.2rem;">Bra att veta</h3>
+            <ul class="info-list">
+                <li>
+                    <span class="dot"></span>
+                    <span>In- och utcheckningstider kan variera med säsong – anges vid bokning.</span>
+                </li>
+                <li>
+                    <span class="dot"></span>
+                    <span>Möjlighet att ta med cykel – fråga vid bokning.</span>
+                </li>
+                <li>
+                    <span class="dot"></span>
+                    <span>Parkering finns i anslutning till fastigheten.</span>
+                </li>
+            </ul>
+
+            <div class="pill">
+                <span>💬 Tips: Skriv om du reser med hund eller andra särskilda önskemål – så återkommer vi med vad som funkar.</span>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <span>© Golden Heights – Vandrarhemmet i Svenshögen</span>
+    <span>Gästhem · Vandrarhem · Lägenheter · Framtida camping</span>
+</footer>
+</body>
+</html>
