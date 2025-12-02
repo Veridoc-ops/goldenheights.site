@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Golden Heights – Boende i Svenshögen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --bg: #050816;
+            --card: #0f172a;
+            --accent: #fbbf24;
+            --text: #f9fafb;
+            --muted: #94a3b8;
+            --radius: 16px;
+            --shadow: 0 12px 35px rgba(0,0,0,0.45);
+            --max: 900px;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 3rem;
+        }
+
+        header {
+            backdrop-filter: blur(12px);
+            background: rgba(10,10,20,0.55);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            position:sticky;
+            top:0;
+            z-index:10;
+        }
+
+        .nav {
+            max-width: var(--max);
+            margin:auto;
+            padding:0.8rem 1rem;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .logo {
+            font-weight:700;
+            font-size:1rem;
+            letter-spacing:0.12em;
+        }
+        .logo span { color:var(--accent); }
+
+        nav a {
+            color:var(--muted);
+            margin-left:1.2rem;
+            font-size:0.85rem;
+            text-decoration:none;
+        }
+        nav a:hover {
+            color:var(--text);
+        }
+
+        main {
+            max-width: var(--max);
+            margin:auto;
+            padding:2rem 1rem 1rem;
+        }
+
+        /* HERO */
+        .hero {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:1.5rem;
+            align-items:center;
+            margin-bottom:2.5rem;
+        }
+        @media(max-width:780px){ .hero{ grid-template-columns:1fr; } }
+
+        .hero h1 {
+            font-size:2rem;
+            margin-bottom:0.4rem;
+        }
+        .hero p {
+            color:var(--muted);
+            margin-bottom:1rem;
+            Font-size:0.95rem;
+        }
+
+        .btn-main {
+            display:inline-block;
+            background:linear-gradient(135deg,#f59e0b,#fbbf24);
+            padding:0.7rem 1.3rem;
+            font-weight:600;
+            border-radius:999px;
+            color:#111;
+            text-decoration:none;
+            margin-top:0.3rem;
+        }
+
+        .hero-img {
+            border-radius:var(--radius);
+            overflow:hidden;
+            border:1px solid rgba(255,255,255,0.08);
+            box-shadow:var(--shadow);
+        }
+        .hero-img img {
+            width:100%; height:100%; object-fit:cover;
+        }
+
+        /* CHOICE GRID */
+        .choices {
+            margin-top:2rem;
+        }
+
+        .choices-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+            gap:1rem;
+        }
+
+        .choice-card {
+            background:var(--card);
+            padding:1rem;
+            border-radius:var(--radius);
+            border:1px solid rgba(255,255,255,0.07);
+            text-decoration:none;
+            color:var(--text);
+            display:flex;
+            flex-direction:column;
+            box-shadow:var(--shadow);
+            transition:transform 0.15s ease;
+        }
+        .choice-card:hover {
+            transform:translateY(-3px);
+            border-color:rgba(255,255,255,0.25);
+        }
+
+        .choice-card img {
+            width:100%;
+            height:130px;
+            object-fit:cover;
+            border-radius:var(--radius);
+            margin-bottom:0.7rem;
+        }
+
+        .choice-card h3 {
+            margin-bottom:0.2rem;
+            font-size:1.05rem;
+        }
+        .choice-card small {
+            color:var(--accent);
+            text-transform:uppercase;
+            letter-spacing:0.12em;
+            font-size:0.75rem;
+        }
+
+        footer {
+            max-width:var(--max);
+            margin:auto;
+            color:var(--muted);
+            padding:2rem 1rem 1rem;
+            border-top:1px solid rgba(255,255,255,0.08);
+            font-size:0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">GOLDEN <span>HEIGHTS</span></div>
+
+        <nav>
+            <a href="gastehem.html">Gästhem</a>
+            <a href="vandrarhem.html">Vandrarhem</a>
+            <a href="bokning.html">Bokning</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Boende för företag & resenärer</h1>
+            <p>
+                Golden Heights erbjuder gästhem, vandrarhem och lägenheter i lugna Svenshögen.
+                Välj bara boendet – resten tar du inne på respektive sida.
+            </p>
+            <a class="btn-main" href="bokning.html">Bokning & förfrågningar</a>
+        </div>
+
+        <div class="hero-img">
+            <!-- Byt till egen bild -->
+            <img src="hero.jpg" alt="Golden Heights">
+        </div>
+    </section>
+
+    <!-- SNABBA VAL -->
+    <section class="choices">
+        <div class="choices-grid">
+
+            <a href="gastehem.html" class="choice-card">
+                <img src="gastehem.jpg" alt="">
+                <h3>Gästhemmet</h3>
+                <small>FÖRETAG & GÄSTARBETARE</small>
+            </a>
+
+            <a href="vandrarhem.html" class="choice-card">
+                <img src="vandrarhem.jpg" alt="">
+                <h3>Vandrarhemmet</h3>
+                <small>KORTA VISTELSER</small>
+            </a>
+
+            <a href="bokning.html" class="choice-card">
+                <img src="lagenheter.jpg" alt="">
+                <h3>Lägenheter</h3>
+                <small>LÄNGRE BOENDEN</small>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © Golden Heights – Svenshögen  
+</footer>
+
+</body>
+</html>
