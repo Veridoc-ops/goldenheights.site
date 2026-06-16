@@ -1,377 +1,425 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <title>Golden Heights – boende i Svenshögen | Gästhem, vandrarhem & lägenheter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Golden Heights i Svenshögen – boende för företag, gästarbetare och resenärer. Gästhem, vandrarhem och lägenheter med närhet till natur, sjö och pendeltåg.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --bg: #050816;
-            --bg-soft: #020617;
-            --card: #0f172a;
-            --accent: #fbbf24;
-            --accent-strong: #f59e0b;
-            --text: #f9fafb;
-            --muted: #94a3b8;
-            --radius: 18px;
-            --shadow: 0 14px 40px rgba(0,0,0,0.55);
-            --max: 1020px;
-        }
+<title>Svenshögens Vandrarhem</title>
 
-        * { margin:0; padding:0; box-sizing:border-box; }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
-        body {
-            background:
-                radial-gradient(circle at top left, #1f2937 0, transparent 55%),
-                radial-gradient(circle at bottom right, #020617 0, transparent 60%),
-                var(--bg);
-            color:var(--text);
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
+<style>
 
-        a { color:inherit; text-decoration:none; }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-        header {
-            position:sticky;
-            top:0;
-            z-index:20;
-            backdrop-filter:blur(14px);
-            background:rgba(5,8,22,0.88);
-            border-bottom:1px solid rgba(148,163,184,0.35);
-        }
+body{
+font-family:'Cormorant Garamond', serif;
+background:#f5f4f0;
+color:#222;
+line-height:1.6;
+}
 
-        .nav {
-            max-width:var(--max);
-            margin:auto;
-            padding:0.8rem 1rem;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            gap:1rem;
-        }
+header{
+height:90vh;
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+url('drone-hero.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
 
-        .logo {
-            font-weight:700;
-            font-size:1rem;
-            letter-spacing:0.12em;
-            text-transform:uppercase;
-        }
-        .logo span { color:var(--accent); }
+.hero{
+max-width:900px;
+padding:40px;
+}
 
-        nav ul {
-            list-style:none;
-            display:flex;
-            gap:1.1rem;
-        }
+.hero h1{
+font-size:5rem;
+letter-spacing:3px;
+margin-bottom:20px;
+}
 
-        nav a {
-            font-size:0.86rem;
-            color:var(--muted);
-            position:relative;
-        }
-        nav a::after {
-            content:"";
-            position:absolute;
-            left:0;
-            bottom:-0.25rem;
-            width:0;
-            height:2px;
-            border-radius:999px;
-            background:linear-gradient(90deg,var(--accent-strong),var(--accent));
-            transition:width .16s ease-out;
-        }
-        nav a:hover {
-            color:var(--text);
-        }
-        nav a:hover::after {
-            width:100%;
-        }
+.hero p{
+font-size:1.6rem;
+margin-bottom:30px;
+}
 
-        .btn-main {
-            display:inline-flex;
-            align-items:center;
-            justify-content:center;
-            padding:0.6rem 1.3rem;
-            border-radius:999px;
-            background:linear-gradient(135deg,var(--accent-strong),var(--accent));
-            color:#111827;
-            font-size:0.9rem;
-            font-weight:600;
-            box-shadow:0 12px 30px rgba(251,191,36,0.5);
-            white-space:nowrap;
-        }
-        .btn-main:hover {
-            filter:brightness(1.08);
-            transform:translateY(-1px);
-        }
+.hero a{
+padding:15px 40px;
+background:#b08a3d;
+color:white;
+text-decoration:none;
+font-size:1.2rem;
+}
 
-        main {
-            max-width:var(--max);
-            margin:auto;
-            padding:1.7rem 1rem 3rem;
-        }
+.logo-section{
+padding:80px 20px;
+text-align:center;
+background:white;
+}
 
-        /* HERO */
-        .hero {
-            display:grid;
-            grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-            gap:1.6rem;
-            align-items:center;
-            margin-bottom:2.5rem;
-        }
-        .eyebrow {
-            font-size:0.8rem;
-            text-transform:uppercase;
-            letter-spacing:0.18em;
-            color:var(--accent);
-            margin-bottom:0.35rem;
-        }
-        .hero h1 {
-            font-size:2.1rem;
-            margin-bottom:0.4rem;
-        }
-        .hero p {
-            color:var(--muted);
-            font-size:0.95rem;
-            margin-bottom:1rem;
-        }
-        .hero-tags {
-            display:flex;
-            flex-wrap:wrap;
-            gap:0.35rem;
-            margin-bottom:1rem;
-        }
-        .tag {
-            font-size:0.78rem;
-            padding:0.25rem 0.7rem;
-            border-radius:999px;
-            border:1px solid rgba(148,163,184,0.5);
-            color:var(--muted);
-        }
+.logo-section img{
+max-width:500px;
+width:100%;
+}
 
-        .hero-img {
-            border-radius:var(--radius);
-            overflow:hidden;
-            border:1px solid rgba(148,163,184,0.45);
-            box-shadow:var(--shadow);
-            background:#020617;
-        }
-        .hero-img img {
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            display:block;
-        }
+.section{
+max-width:1300px;
+margin:auto;
+padding:120px 40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
 
-        /* CHOICES */
-        .section-title {
-            font-size:1.35rem;
-            margin-bottom:0.3rem;
-        }
-        .section-lead {
-            font-size:0.9rem;
-            color:var(--muted);
-            margin-bottom:1.2rem;
-        }
+.section:nth-child(even){
+background:white;
+}
 
-        .choices-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
-            gap:1rem;
-            margin-bottom:2rem;
-        }
+.section img{
+width:100%;
+display:block;
+}
 
-        .choice-card {
-            background:var(--card);
-            border-radius:var(--radius);
-            border:1px solid rgba(148,163,184,0.4);
-            padding:0.9rem;
-            box-shadow:var(--shadow);
-            display:flex;
-            flex-direction:column;
-            transition:transform .15s ease-out, border-color .15s ease-out, box-shadow .15s ease-out;
-        }
-        .choice-card:hover {
-            transform:translateY(-3px);
-            border-color:rgba(249,250,251,0.45);
-            box-shadow:0 18px 45px rgba(0,0,0,0.8);
-        }
+.text h2{
+font-size:3rem;
+margin-bottom:20px;
+}
 
-        .choice-card img {
-            width:100%;
-            height:140px;
-            object-fit:cover;
-            border-radius:var(--radius);
-            margin-bottom:0.75rem;
-        }
-        .choice-card h3 {
-            font-size:1.0rem;
-            margin-bottom:0.15rem;
-        }
-        .choice-card small {
-            color:var(--accent);
-            text-transform:uppercase;
-            letter-spacing:0.13em;
-            font-size:0.76rem;
-        }
+.text p{
+font-size:1.3rem;
+margin-bottom:20px;
+}
 
-        /* IMAGE STRIP */
-        .strip {
-            background:var(--card);
-            border-radius:var(--radius);
-            border:1px solid rgba(148,163,184,0.4);
-            padding:0.9rem;
-            box-shadow:var(--shadow);
-            margin-bottom:2.2rem;
-        }
-        .strip h2 {
-            font-size:1.05rem;
-            margin-bottom:0.4rem;
-        }
-        .strip p {
-            font-size:0.86rem;
-            color:var(--muted);
-            margin-bottom:0.7rem;
-        }
-        .strip-grid {
-            display:grid;
-            grid-template-columns:repeat(3, minmax(0,1fr));
-            gap:0.5rem;
-        }
-        .strip-grid img {
-            width:100%;
-            height:120px;
-            object-fit:cover;
-            border-radius:12px;
-        }
+.button{
+display:inline-block;
+padding:12px 30px;
+background:#b08a3d;
+color:white;
+text-decoration:none;
+}
 
-        /* FOOTER */
-        footer {
-            max-width:var(--max);
-            margin:auto;
-            padding:1.2rem 1rem 2.2rem;
-            border-top:1px solid rgba(148,163,184,0.45);
-            color:var(--muted);
-            font-size:0.8rem;
-            display:flex;
-            justify-content:space-between;
-            gap:0.7rem;
-            flex-wrap:wrap;
-        }
+.history{
+padding:120px 40px;
+background:#ece9e2;
+}
 
-        @media(max-width:860px){
-            nav ul { display:none; }
-            .hero {
-                grid-template-columns:1fr;
-            }
-        }
+.history h2{
+text-align:center;
+font-size:3rem;
+margin-bottom:60px;
+}
 
-        @media(max-width:500px){
-            .nav, main, footer { padding-inline:0.75rem; }
-        }
-    </style>
+.history-grid{
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.history-grid img{
+width:100%;
+}
+
+.cards{
+padding:120px 40px;
+}
+
+.cards h2{
+text-align:center;
+font-size:3rem;
+margin-bottom:60px;
+}
+
+.card-grid{
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+}
+
+.card{
+background:white;
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+}
+
+.card-content h3{
+font-size:2rem;
+margin-bottom:10px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+footer h3{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+footer p{
+font-size:1.2rem;
+margin:5px 0;
+}
+
+.gold{
+color:#b08a3d;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.section{
+grid-template-columns:1fr;
+}
+
+.history-grid{
+grid-template-columns:1fr;
+}
+
+.card-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
 </head>
-
 <body>
 
 <header>
-    <div class="nav">
-        <div class="logo">GOLDEN <span>HEIGHTS</span></div>
-        <nav>
-            <ul>
-                <li><a href="gasthem.html">Gästhem</a></li>
-                <li><a href="vandrarhem.html">Vandrarhem</a></li>
-                <li><a href="bokning.html">Bokning</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
-        <a class="btn-main" href="bokning.html">Boka / offert</a>
-    </div>
+
+<div class="hero">
+
+<h1>SVENSHÖGENS VANDRARHEM</h1>
+
+<p>
+Boende, natur och gemenskap i hjärtat av Bohuslän.
+</p>
+
+<a href="#">BOKA BOENDE</a>
+
+</div>
+
 </header>
 
-<main>
+<section class="logo-section">
 
-    <!-- HERO -->
-    <section class="hero">
-        <div>
-            <div class="eyebrow">Boende i Svenshögen</div>
-            <h1>Golden Heights – naturnära bas för företag & resenärer</h1>
-            <p>
-                Gästhem, vandrarhem och lägenheter i lugna Svenshögen, med skog, sjö och pendeltåg runt hörnet.
-            </p>
-            <div class="hero-tags">
-                <span class="tag">Företag & gästarbetare</span>
-                <span class="tag">Resenärer & familjer</span>
-                <span class="tag">Längre boenden</span>
-            </div>
-            <a class="btn-main" href="bokning.html">Gå till bokning</a>
-        </div>
+<img src="svenshogens-vandrarhem-logo.png">
 
-        <div class="hero-img">
-            <!-- drönaröversikten (den långa filen som börjar på 1285...) -->
-            <img src="128556481_101644455394804646_2699212925204698758_n_10159723399895646.jpg"
-                 alt="Golden Heights i Svenshögen omgivet av skog och grönområden">
-        </div>
-    </section>
+</section>
 
-    <!-- VAL AV BOENDE -->
-    <section>
-        <h2 class="section-title">Välj boende</h2>
-        <p class="section-lead">
-            Tre tydliga vägar in – mer information och priser hittar du på respektive sida.
-        </p>
+<section class="section">
 
-        <div class="choices-grid">
+<img src="DJI_0022.JPG">
 
-            <a href="gasthem.html" class="choice-card">
-                <!-- bild med rum / kollage (4682...) -->
-                <img src="468205576_10169897366465646_433196192731201225_n_10159723399895646.jpg"
-                     alt="Rum på gästhemmet på Golden Heights">
-                <h3>Gästhemmet</h3>
-                <small>FÖRETAG & GÄSTARBETARE</small>
-            </a>
+<div class="text">
 
-            <a href="vandrarhem.html" class="choice-card">
-                <!-- badplatsen -->
-                <img src="Svenshogen-Hallungen-badplats-1525x1047.jpg"
-                     alt="Brygga vid sjön nära Golden Heights vandrarhem">
-                <h3>Vandrarhemmet</h3>
-                <small>RESENÄRER & FAMILJER</small>
-            </a>
+<h2>Vandrarhemmet</h2>
 
-            <a href="bokning.html" class="choice-card">
-                <!-- andra drönarbilden (4687...) -->
-                <img src="468748191_10170015839665646_80963531096353109_n_10159723399895646.jpg"
-                     alt="Svenshögen och sjön vid Golden Heights">
-                <h3>Lägenheter & längre boenden</h3>
-                <small>1–5 ROK I SVENSHÖGEN</small>
-            </a>
+<p>
+I det historiska sanatoriet erbjuder vi prisvärda rum och en unik miljö omgiven av natur, sjöar och kulturhistoria.
+</p>
 
-        </div>
-    </section>
+<p>
+Perfekt för familjer, grupper, naturälskare och besökare som vill uppleva Bohuslän från en lugn och genuin plats.
+</p>
 
-    <!-- BILDER & KÄNSLA -->
-    <section class="strip">
-        <h2>Naturen, huset och vardagen</h2>
-        <p>
-            Bo naturnära med gångavstånd till sjön Hällungen, badplats, grönområden och stora gemensamma kök.
-        </p>
-        <div class="strip-grid">
-            <!-- parken (SquarePic...), kök (samma 4682...), badplats igen -->
-            <img src="SquarePic_20250709_02292178.jpg" alt="Gröna parken vid Golden Heights">
-            <img src="468205576_10169897366465646_433196192731201225_n_10159723399895646.jpg" alt="Kök och rum på Golden Heights">
-            <img src="Svenshogen-Hallungen-badplats-1525x1047.jpg" alt="Badplats vid sjön nära Golden Heights">
-        </div>
-    </section>
+<a class="button" href="#">
+Läs mer
+</a>
 
-</main>
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="text">
+
+<h2>Företagsboende</h2>
+
+<p>
+Långtidsboende för företag, entreprenörer och arbetslag.
+</p>
+
+<p>
+Möblerade rum, gemensamma kök, tvättmöjligheter och flexibla lösningar för både kortare och längre vistelser.
+</p>
+
+<a class="button" href="#">
+Företagsboende
+</a>
+
+</div>
+
+<img src="1000003948.jpg">
+
+</section>
+
+<section class="section">
+
+<img src="worldwidewelcome-logo.png">
+
+<div class="text">
+
+<h2>World Wide Welcome</h2>
+
+<p>
+En ideell mötesplats för kultur, volontärarbete, odling och gemenskap.
+</p>
+
+<p>
+Vi tror på möten mellan människor och på att skapa möjligheter lokalt genom internationella perspektiv.
+</p>
+
+<a class="button" href="#">
+Föreningen
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<img src="IMG_20260520_132514.jpg">
+
+<div class="text">
+
+<h2>Socialt engagemang</h2>
+
+<p>
+På området finns plats för odling, återbruk, naturvård och lokala initiativ.
+</p>
+
+<p>
+Historiska miljöer möter framtidens idéer om hållbarhet och gemenskap.
+</p>
+
+<a class="button" href="#">
+Läs mer
+</a>
+
+</div>
+
+</section>
+
+<section class="history">
+
+<h2>Från sanatorium till mötesplats</h2>
+
+<div class="history-grid">
+
+<img src="sanatorium1.jpg">
+
+<img src="DJI_0022.JPG">
+
+</div>
+
+</section>
+
+<section class="cards">
+
+<h2>Upptäck området</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<img src="Hallungen.webp">
+
+<div class="card-content">
+
+<h3>Hallungen</h3>
+
+<p>
+Badplats, bryggor, fiske och natursköna promenader.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="Svenshogen-station.jpg">
+
+<div class="card-content">
+
+<h3>Svenshögen</h3>
+
+<p>
+Historisk stationsort mitt i Bohuslän.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="IMG_20260520_133213.jpg">
+
+<div class="card-content">
+
+<h3>Natur & vandring</h3>
+
+<p>
+Skogar, stigar och kulturmiljöer direkt utanför dörren.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <footer>
-    <span>© Golden Heights – boende i Svenshögen</span>
-    <span>Gästhem · Vandrarhem · Lägenheter</span>
+
+<h3>SVENSHÖGENS VANDRARHEM</h3>
+
+<p>Hallungsvägen 12</p>
+
+<p>444 97 Svenshögen</p>
+
+<br>
+
+<p>info@goldenheights.se</p>
+
+<br>
+
+<p class="gold">goldenheights.se</p>
+
 </footer>
 
 </body>
