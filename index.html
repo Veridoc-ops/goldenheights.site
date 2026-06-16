@@ -3,424 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Svenshögens Vandrarhem</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
-
+<title>Svenshögen</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Cormorant Garamond', serif;
-background:#f5f4f0;
-color:#222;
-line-height:1.6;
-}
-
-header{
-height:90vh;
-background:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
-url('drone-hero.jpg');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-}
-
-.hero{
-max-width:900px;
-padding:40px;
-}
-
-.hero h1{
-font-size:5rem;
-letter-spacing:3px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:1.6rem;
-margin-bottom:30px;
-}
-
-.hero a{
-padding:15px 40px;
-background:#b08a3d;
-color:white;
-text-decoration:none;
-font-size:1.2rem;
-}
-
-.logo-section{
-padding:80px 20px;
-text-align:center;
-background:white;
-}
-
-.logo-section img{
-max-width:500px;
-width:100%;
-}
-
-.section{
-max-width:1300px;
-margin:auto;
-padding:120px 40px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.section:nth-child(even){
-background:white;
-}
-
-.section img{
-width:100%;
-display:block;
-}
-
-.text h2{
-font-size:3rem;
-margin-bottom:20px;
-}
-
-.text p{
-font-size:1.3rem;
-margin-bottom:20px;
-}
-
-.button{
-display:inline-block;
-padding:12px 30px;
-background:#b08a3d;
-color:white;
-text-decoration:none;
-}
-
-.history{
-padding:120px 40px;
-background:#ece9e2;
-}
-
-.history h2{
-text-align:center;
-font-size:3rem;
-margin-bottom:60px;
-}
-
-.history-grid{
-max-width:1300px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-}
-
-.history-grid img{
-width:100%;
-}
-
-.cards{
-padding:120px 40px;
-}
-
-.cards h2{
-text-align:center;
-font-size:3rem;
-margin-bottom:60px;
-}
-
-.card-grid{
-max-width:1300px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:40px;
-}
-
-.card{
-background:white;
-}
-
-.card img{
-width:100%;
-height:250px;
-object-fit:cover;
-}
-
-.card-content{
-padding:25px;
-}
-
-.card-content h3{
-font-size:2rem;
-margin-bottom:10px;
-}
-
-footer{
-background:#222;
-color:white;
-text-align:center;
-padding:80px 20px;
-}
-
-footer h3{
-font-size:2rem;
-margin-bottom:20px;
-}
-
-footer p{
-font-size:1.2rem;
-margin:5px 0;
-}
-
-.gold{
-color:#b08a3d;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#f5f3ee;font-family:'Cormorant Garamond',serif;color:#222;line-height:1.7;}
+.hero{height:95vh;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url('DJI_0022.JPG');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:white;}
+.hero-content{max-width:900px;padding:40px;}
+.hero h1{font-size:6rem;font-weight:600;letter-spacing:4px;}
+.hero p{font-size:1.7rem;margin-top:20px;}
+.hero small{display:block;margin-top:25px;font-size:1rem;letter-spacing:3px;color:#d3b073;}
+.intro{max-width:1000px;margin:auto;padding:100px 40px;text-align:center;}
+.intro h2{font-size:3rem;margin-bottom:25px;}
+.intro p{font-size:1.4rem;}
+.section{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:120px 10%;}
+.section:nth-child(even){background:white;}
+.section img{width:100%;height:500px;object-fit:cover;}
+.section h2{font-size:3rem;margin-bottom:20px;}
+.section p{font-size:1.25rem;}
+.link{display:inline-block;margin-top:25px;text-decoration:none;color:#b08a3d;font-size:1.2rem;font-weight:bold;}
+.quote{background:#1f3126;color:white;text-align:center;padding:140px 40px;}
+.quote h2{font-size:3rem;max-width:900px;margin:auto;}
+.gallery{padding:120px 40px;}
+.gallery h2{text-align:center;font-size:3rem;margin-bottom:50px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1400px;margin:auto;}
+.gallery-grid img{width:100%;height:250px;object-fit:cover;}
+footer{background:#111;color:white;text-align:center;padding:80px 40px;}
+footer h3{font-size:2rem;margin-bottom:20px;}
+.gold{color:#d3b073;}
 @media(max-width:900px){
-
-.hero h1{
-font-size:3rem;
+.hero h1{font-size:4rem;}
+.section{grid-template-columns:1fr;}
+.gallery-grid{grid-template-columns:1fr 1fr;}
 }
-
-.section{
-grid-template-columns:1fr;
-}
-
-.history-grid{
-grid-template-columns:1fr;
-}
-
-.card-grid{
-grid-template-columns:1fr;
-}
-
-}
-
 </style>
 </head>
 <body>
-
-<header>
-
-<div class="hero">
-
-<h1>SVENSHÖGENS VANDRARHEM</h1>
-
-<p>
-Boende, natur och gemenskap i hjärtat av Bohuslän.
-</p>
-
-<a href="#">BOKA BOENDE</a>
-
+<section class="hero">
+<div class="hero-content">
+<h1>SVENSHÖGEN</h1>
+<p>Boende, gemenskap och möjligheter</p>
+<small>goldenheights.se</small>
 </div>
+</section>
 
-</header>
-
-<section class="logo-section">
-
-<img src="svenshogens-vandrarhem-logo.png">
-
+<section class="intro">
+<h2>Mer än bara ett boende</h2>
+<p>Mitt i Bohuslän ligger Svenshögen. En plats där människor möts, bor, arbetar, odlar, driver projekt och skapar framtid tillsammans.</p>
 </section>
 
 <section class="section">
-
-<img src="DJI_0022.JPG">
-
-<div class="text">
-
+<img src="vandrarhem.jpg">
+<div>
 <h2>Vandrarhemmet</h2>
-
-<p>
-I det historiska sanatoriet erbjuder vi prisvärda rum och en unik miljö omgiven av natur, sjöar och kulturhistoria.
-</p>
-
-<p>
-Perfekt för familjer, grupper, naturälskare och besökare som vill uppleva Bohuslän från en lugn och genuin plats.
-</p>
-
-<a class="button" href="#">
-Läs mer
-</a>
-
+<p>Bo i den historiska miljön med närhet till Hallungen, naturupplevelser och Bohusläns kust.</p>
+<a href="#" class="link">Läs mer →</a>
 </div>
-
 </section>
 
 <section class="section">
-
-<div class="text">
-
-<h2>Företagsboende</h2>
-
-<p>
-Långtidsboende för företag, entreprenörer och arbetslag.
-</p>
-
-<p>
-Möblerade rum, gemensamma kök, tvättmöjligheter och flexibla lösningar för både kortare och längre vistelser.
-</p>
-
-<a class="button" href="#">
-Företagsboende
-</a>
-
+<div>
+<h2>Företagsboendet</h2>
+<p>Trygga och flexibla boendelösningar för företag, entreprenörer och arbetslag.</p>
+<a href="#" class="link">Läs mer →</a>
 </div>
-
 <img src="1000003948.jpg">
-
 </section>
 
 <section class="section">
+<img src="309.jpg">
+<div>
+<h2>Hyreslägenheter</h2>
+<p>Långsiktigt boende i Svenshögen. Här kan framtida lediga objekt och intresseanmälningar presenteras.</p>
+<a href="#" class="link">Läs mer →</a>
+</div>
+</section>
 
-<img src="worldwidewelcome-logo.png">
-
-<div class="text">
-
+<section class="section">
+<img src="worldwidewelcome.png">
+<div>
 <h2>World Wide Welcome</h2>
-
-<p>
-En ideell mötesplats för kultur, volontärarbete, odling och gemenskap.
-</p>
-
-<p>
-Vi tror på möten mellan människor och på att skapa möjligheter lokalt genom internationella perspektiv.
-</p>
-
-<a class="button" href="#">
-Föreningen
-</a>
-
+<p>En mötesplats för kulturutbyte, gemenskap, volontärarbete och internationella kontakter.</p>
+<a href="#" class="link">Läs mer →</a>
 </div>
-
 </section>
 
 <section class="section">
-
 <img src="IMG_20260520_132514.jpg">
-
-<div class="text">
-
+<div>
 <h2>Socialt engagemang</h2>
-
-<p>
-På området finns plats för odling, återbruk, naturvård och lokala initiativ.
-</p>
-
-<p>
-Historiska miljöer möter framtidens idéer om hållbarhet och gemenskap.
-</p>
-
-<a class="button" href="#">
-Läs mer
-</a>
-
+<p>Odling, återbruk, lokala initiativ och projekt som stärker människor och platsen.</p>
+<a href="#" class="link">Läs mer →</a>
 </div>
-
 </section>
 
-<section class="history">
-
-<h2>Från sanatorium till mötesplats</h2>
-
-<div class="history-grid">
-
-<img src="sanatorium1.jpg">
-
-<img src="DJI_0022.JPG">
-
+<section class="section">
+<div>
+<h2>Projekt</h2>
+<p>Pågående och framtida satsningar. Renoveringar, utvecklingsidéer, odling och visioner för Svenshögen.</p>
+<a href="#" class="link">Läs mer →</a>
 </div>
-
+<img src="projekt.jpg">
 </section>
 
-<section class="cards">
+<section class="quote">
+<h2>"Vi bygger inte bara boenden. Vi bygger möjligheter, gemenskap och framtid."</h2>
+</section>
 
-<h2>Upptäck området</h2>
-
-<div class="card-grid">
-
-<div class="card">
-
+<section class="gallery">
+<h2>Livet i Svenshögen</h2>
+<div class="gallery-grid">
 <img src="Hallungen.webp">
-
-<div class="card-content">
-
-<h3>Hallungen</h3>
-
-<p>
-Badplats, bryggor, fiske och natursköna promenader.
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
 <img src="Svenshogen-station.jpg">
-
-<div class="card-content">
-
-<h3>Svenshögen</h3>
-
-<p>
-Historisk stationsort mitt i Bohuslän.
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
+<img src="DJI_0022.JPG">
 <img src="IMG_20260520_133213.jpg">
-
-<div class="card-content">
-
-<h3>Natur & vandring</h3>
-
-<p>
-Skogar, stigar och kulturmiljöer direkt utanför dörren.
-</p>
-
 </div>
-
-</div>
-
-</div>
-
 </section>
 
 <footer>
-
-<h3>SVENSHÖGENS VANDRARHEM</h3>
-
-<p>Hallungsvägen 12</p>
-
-<p>444 97 Svenshögen</p>
-
+<h3>SVENSHÖGEN</h3>
+<p>Vandrarhemmet • Företagsboendet • Hyreslägenheter</p>
+<p>World Wide Welcome • Socialt engagemang • Projekt</p>
 <br>
-
-<p>info@goldenheights.se</p>
-
-<br>
-
 <p class="gold">goldenheights.se</p>
-
 </footer>
-
 </body>
 </html>
